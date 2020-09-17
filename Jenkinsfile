@@ -23,13 +23,13 @@ pipeline{
                   DIRECTORY=~/jenkins-pipeline-exercise  
                   FILE=~/qacdevops/chaperootodo_client
                   sudo apt-get install git                
-                  sudo rm -rf $FILE
-                  if [ -d "$FILE" ]
-                  then
-                    echo exists
-                  else 
-                    git clone https://gitlab.com/qacdevops/chaperootodo_client 
-                  fi 
+                  #sudo rm -rf $FILE
+                  #if [ -d "$FILE" ]
+                  #then
+                  #  echo exists
+                  #else 
+                  #  git clone https://gitlab.com/qacdevops/chaperootodo_client 
+                  #fi 
                   cd $FILE
                   '''
                 }
