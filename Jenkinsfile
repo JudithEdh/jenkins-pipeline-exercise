@@ -21,7 +21,7 @@ pipeline{
                 steps{
                   sh '''
                   DIRECTORY=~/jenkins-pipeline-exercise  
-                  FILE=~/qacdevops/chaperootodo_client
+                  FILE=./qacdevops/chaperootodo_client
                   sudo apt-get install git                
                   #sudo rm -rf $FILE
                   #if [ -d "$FILE" ]
