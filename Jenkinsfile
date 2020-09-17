@@ -30,7 +30,7 @@ pipeline{
                   #else 
                   #  git clone https://gitlab.com/qacdevops/chaperootodo_client 
                   #fi 
-                  cd $FILE
+                  #cd $FILE
                   '''
                 }
             }
