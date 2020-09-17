@@ -52,7 +52,7 @@ pipeline{
                         export DB_PASSWORD=password
                         cd /home/jenkins/.jenkins/workspace/jenkins-pipeline-exercise/chaperootodo_client
                         sudo docker-compose pull && sudo docker-compose up -d
-EOF
+                  EOF
                        '''  
                 }
             }
