@@ -8,8 +8,8 @@ pipeline{
                   DIRECTORY=~/jenkins-pipeline-exercise  
                   rm -rf DIRECTORY
                   if [ -d ~/jenkins-pipeline-exercise ]
-                  then
-                    rm -rf $DIRECTORY
+                    then
+                      rm -rf $DIRECTORY
                   else 
                     mkdir $DIRECTORY
                     cd $DIRECTORY
