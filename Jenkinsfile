@@ -1,12 +1,13 @@
 pipeline{
         agent any
         stages{
-            stage('Clone Repo if exists'){
+            stage('Clone Repo if it does not exist'){
                 steps{
                   sh '''
                   #! /bin/bash
                   FILE=~/qacdevops/chaperootodo_client
                   sudo apt-get install git
+                  cd home/jenkins/.jenkins/workspace/jenkins-pipeline-exercise
                   if [ -d "$FILE" ]
                   then
                     cd $FILE && echo exists
