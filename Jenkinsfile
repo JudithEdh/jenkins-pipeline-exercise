@@ -6,7 +6,7 @@ pipeline{
                   sh '''
                   #! /bin/bash
                   DIRECTORY=~/jenkins-pipeline-exercise                 
-                  if [ -d "$DIRECTORY" ]
+                  if [ -d ~/jenkins-pipeline-exercise ]
                   then
                     cd $DIRECTORY
                   else 
