@@ -23,7 +23,7 @@ pipeline{
                   DIRECTORY=~/jenkins-pipeline-exercise  
                   FILE=~/qacdevops/chaperootodo_client
                   sudo apt-get install git                
-                  rm -rf $FILE
+                  sudo rm -rf $FILE
                   if [ -d "$FILE" ]
                   then
                     echo exists
