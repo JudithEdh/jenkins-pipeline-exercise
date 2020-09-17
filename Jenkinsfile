@@ -29,7 +29,7 @@ pipeline{
                   then
                     cd $FILE && echo exists
                   else 
-                    cd $DIRECTORY && git clone https://gitlab.com/qacdevops/chaperootodo_client && cd $FILE
+                    git clone https://gitlab.com/qacdevops/chaperootodo_client && cd $FILE
                   fi          
                   '''
                 }
