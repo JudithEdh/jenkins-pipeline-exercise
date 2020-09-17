@@ -5,9 +5,9 @@ pipeline{
                 steps{
                   sh '''
                   #!/bin/bash
-                  FILE=~/home/jenkins/qacdevops/chaperootodo_client
+                  FILE=/home/jenkins/home/jenkins/qacdevops/chaperootodo_client
                   sudo apt-get install git
-                  if (( -d "$FILE" ))
+                  if [ -d "$FILE" ]
                   then
                     cd $FILE && git pull origin master
                   else 
