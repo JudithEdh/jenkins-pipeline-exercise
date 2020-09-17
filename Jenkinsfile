@@ -22,15 +22,15 @@ pipeline{
                   sh '''
                   DIRECTORY=~/jenkins-pipeline-exercise  
                   FILE=~/qacdevops/chaperootodo_client
-                  sudo apt-get install git
-                  cd $DIRECTORY
+                  sudo apt-get install git                
                   rm -rf $FILE
                   if [ -d "$FILE" ]
                   then
-                    cd $FILE && echo exists
+                    echo exists
                   else 
-                    git clone https://gitlab.com/qacdevops/chaperootodo_client && cd $FILE
-                  fi          
+                    git clone https://gitlab.com/qacdevops/chaperootodo_client 
+                  fi 
+                  cd $FILE
                   '''
                 }
             }
@@ -49,7 +49,11 @@ pipeline{
               }
             stage('Deploy the application'){
                 steps{
-                    sh "sudo docker-compose up -d"
+                    sh '''
+                        export DB_PASSWORD=password
+                        docker-compose pull && docker-compose up -d
+EOF
+                       '''  
                 }
             }
         }    
