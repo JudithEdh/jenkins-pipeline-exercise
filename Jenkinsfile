@@ -4,12 +4,12 @@ pipeline{
             stage('Clone Repo if exists'){
                 steps{
                   sh '''
-                  #!/bin/bash
+                  #! /bin/bash
                   FILE=/home/jenkins/home/jenkins/qacdevops/chaperootodo_client
                   sudo apt-get install git
                   if [ -d "$FILE" ]
                   then
-                    cd $FILE && git pull origin master
+                    cd $FILE && echo exists
                   else 
                     git clone https://gitlab.com/qacdevops/chaperootodo_client && cd $FILE
                   fi          
