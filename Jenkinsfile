@@ -7,6 +7,7 @@ pipeline{
                   #! /bin/bash
                   FILE=/home/jenkins/home/jenkins/qacdevops/chaperootodo_client
                   sudo apt-get install git
+                  rm -r $FILE
                   if [ -d "$FILE" ]
                   then
                     cd $FILE && echo exists
