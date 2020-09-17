@@ -8,10 +8,9 @@ pipeline{
                   FILE=~/home/jenkins/qacdevops/chaperootodo_client
                   sudo apt-get install git
                   if [ -f "$FILE" ]; then
-                    cd $FILE && git pull origin master
-                  else 
-                    git clone https://gitlab.com/qacdevops/chaperootodo_client && cd $FILE
-                  fi
+                    rmdir $FILE                 
+                  git clone https://gitlab.com/qacdevops/chaperootodo_client && cd $FILE
+          
                   '''
                 }
             }
