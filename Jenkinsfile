@@ -6,11 +6,12 @@ pipeline{
                   sh '''
                   #! /bin/bash
                   DIRECTORY=~/jenkins-pipeline-exercise                 
-                  if [ -d "$FILE" ]
+                  if [ -d "$DIRECTORY" ]
                   then
-                    cd $FILE 
+                    cd $DIRECTORY
                   else 
                     mkdir DIRECTORY
+                    cd $DIRECTORY
                   fi          
                   '''
                 }
@@ -18,13 +19,15 @@ pipeline{
             stage('Clone Repo if it does not exist'){
                 steps{
                   sh '''
+                  DIRECTORY=~/jenkins-pipeline-exercise  
                   FILE=~/qacdevops/chaperootodo_client
                   sudo apt-get install git
+                  cd $DIRECTORY
                   if [ -d "$FILE" ]
                   then
                     cd $FILE && echo exists
                   else 
-                    git clone https://gitlab.com/qacdevops/chaperootodo_client && cd $FILE
+                    cd $DIRECTORY && git clone https://gitlab.com/qacdevops/chaperootodo_client && cd $FILE
                   fi          
                   '''
                 }
