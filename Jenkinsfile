@@ -8,7 +8,7 @@ pipeline{
                   DIRECTORY=~/jenkins-pipeline-exercise  
                   rm -rf DIRECTORY
                   if [ -d ~/jenkins-pipeline-exercise ]
-                    then
+                  then
                       rm -rf $DIRECTORY
                   else 
                     mkdir $DIRECTORY
@@ -23,7 +23,7 @@ pipeline{
                   DIRECTORY=~/jenkins-pipeline-exercise  
                   FILE=/home/jenkins/.jenkins/workspace/jenkins-pipeline-exercise/chaperootodo_client
                   sudo apt-get install git                
-                  #if [ -d "$FILE" ]
+                  if [ -d "$FILE" ]
                   then
                     echo exists
                   else 
