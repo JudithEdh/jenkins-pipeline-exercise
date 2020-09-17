@@ -5,12 +5,13 @@ pipeline{
                 steps{
                   sh '''
                   #! /bin/bash
-                  DIRECTORY=~/jenkins-pipeline-exercise                 
+                  DIRECTORY=~/jenkins-pipeline-exercise  
+                  rm -rf DIRECTORY
                   if [ -d ~/jenkins-pipeline-exercise ]
                   then
-                    cd $DIRECTORY
+                    rm -rf $DIRECTORY
                   else 
-                    mkdir DIRECTORY
+                    mkdir $DIRECTORY
                     cd $DIRECTORY
                   fi          
                   '''
@@ -23,6 +24,7 @@ pipeline{
                   FILE=~/qacdevops/chaperootodo_client
                   sudo apt-get install git
                   cd $DIRECTORY
+                  rm -rf $FILE
                   if [ -d "$FILE" ]
                   then
                     cd $FILE && echo exists
