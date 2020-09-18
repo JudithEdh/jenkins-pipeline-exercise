@@ -49,9 +49,10 @@ pipeline{
             stage('Deploy the application'){
                 steps{
                     sh '''
-                    export DB_PASSWORD=password
+                    sudo export DB_PASSWORD=password
                     cd /home/jenkins/.jenkins/workspace/jenkins-pipeline-exercise/chaperootodo_client
-                    sudo docker-compose pull && sudo docker-compose up -d
+                    DB_PASSWORD=password
+                    sudo export DB_PASSWORD=password && sudo docker-compose pull && sudo docker-compose up -d
                     '''  
                 }
             }
